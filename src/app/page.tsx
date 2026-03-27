@@ -4,7 +4,7 @@ import ParticlesBackground from "@/components/ParticleBackground";
 
 export default function Home() {
   return (
-    <div className="bg-black text-2xl font-extrabold h-screen flex justify-center items-center">
+    <div className="bg-green-300 text-2xl font-extrabold h-screen flex justify-center items-center">
       <CustomCursor />
       <ParticlesBackground />
       <Navbar />
