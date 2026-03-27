@@ -1,7 +1,7 @@
 "use client";
 
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import OverlayMenu from "./OverlayMenu";
 import Image from "next/image";
 import Logo from "../../public/assets/images/Logo.png"
@@ -20,7 +20,60 @@ const Navbar = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [visible, setVisible] = useState(true);
+    const [forceVisible, setForceVisible] = useState(false);
 
+    const lastScrollY = useRef(0);
+    const timerId = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    useEffect(() => {
+        const homeSection = document.querySelector("#home");
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setForceVisible(true);
+                setVisible(true);
+            } else {
+                setForceVisible(false);
+            }
+        }, { threshold: 0.1 });
+
+        if (homeSection) observer.observe(homeSection);
+
+        return () => {
+            if (homeSection) observer.unobserve(homeSection);
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (forceVisible) {
+                setVisible(true);
+                return;
+            }
+
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY.current) {
+                setVisible(false);
+            } else {
+                setVisible(true);
+
+                if (timerId.current) clearTimeout(timerId.current);
+
+                timerId.current = setTimeout(() => {
+                    setVisible(false);
+                }, 3000)
+            }
+
+            lastScrollY.current = currentScrollY;
+        }
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            if (timerId.current) clearTimeout(timerId.current);
+        };
+    }, [forceVisible]);
 
 
 
@@ -53,7 +106,7 @@ const Navbar = () => {
                             </Button>
                         </TooltipTrigger>
 
-                        <TooltipContent className="bg-transparent text-white px-3 py-1 text-sm rounded-md shadow-lg">
+                        <TooltipContent className="bg-transparent text-white px-3 py-1 text-sm rounded-md shadow-lg [&>span]:hidden">
                             Open Menu
                         </TooltipContent>
                     </Tooltip>
