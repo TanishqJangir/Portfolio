@@ -106,7 +106,7 @@ const Navbar = () => {
                             </Button>
                         </TooltipTrigger>
 
-                        <TooltipContent className="bg-transparent text-white px-3 py-1 text-sm rounded-md shadow-lg [&>span]:hidden">
+                        <TooltipContent className="bg-transparent text-white! px-3 py-1 text-sm rounded-md shadow-lg **:data-radix-popper-arrow:hidden">
                             Open Menu
                         </TooltipContent>
                     </Tooltip>

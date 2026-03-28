@@ -1,13 +1,13 @@
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
-import ParticlesBackground from "@/components/ParticleBackground";
+import Home from "@/sections/Home";
 
-export default function Home() {
+export default function App() {
   return (
-    <div className="bg-green-300 text-2xl font-extrabold h-screen flex justify-center items-center">
+    <div className="relative gradient text-white">
       <CustomCursor />
-      <ParticlesBackground />
       <Navbar />
+      <Home/>
     </div>
   );
 };
