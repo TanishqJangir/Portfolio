@@ -11,7 +11,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import Image from "next/image";
 import avator from "../../public/assets/images/avator.png"
 
-const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
 
 
 
@@ -32,7 +32,7 @@ const glowVariants: Variants = {
 }
 
 
-const Home = () => {
+const Hero = () => {
 
     const roles = useMemo(() => ["Web Developer", "Software Developer", "Full Stack Developer"], []);
 
@@ -212,6 +212,8 @@ const Home = () => {
                     <MotionImage
                         src={avator}
                         alt="Tanishq Jangir"
+                        loading="eager"
+                        priority
                         className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none"
                         style={{
                             right: "20px", width: "min(45vw, 780px)", maxHeight: "90vh"
@@ -230,4 +232,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Hero;
