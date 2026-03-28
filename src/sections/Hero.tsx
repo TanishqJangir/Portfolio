@@ -10,6 +10,8 @@ import { Variants } from "framer-motion";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import Image from "next/image";
 import avator from "../../public/assets/images/avator.png"
+import InstagramIcon from "../../public/assets/icons/InstagramIcon";
+import YoutubeIcon from "../../public/assets/icons/YoutubeIcon";
 
 const MotionImage = motion.create(Image);
 
@@ -19,6 +21,8 @@ const socialLinks = [
     { Icon: <TwitterIcon className="size-8" />, label: "X", url: "https://x.com/Tanishq_Jangir" },
     { Icon: <GithubIcon className="size-8" />, label: "GitHub", url: "https://github.com/TanishqJangir" },
     { Icon: <LinkedInIcon className="size-8" />, label: "LinkedIn", url: "https://www.linkedin.com/in/tanishq-jangir-b17b0725a" },
+    { Icon: <InstagramIcon className="size-8" />, label: "Instagram", url: "https://www.instagram.com/tanishq__jangir" },
+    { Icon: <YoutubeIcon className="size-8" />, label: "YouTube", url: "https://www.youtube.com/@TanishqJangir-Escanor" },
 ];
 
 const glowVariants: Variants = {
