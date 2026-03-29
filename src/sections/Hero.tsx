@@ -168,7 +168,7 @@ const Hero = () => {
                         </motion.div>
 
                         <motion.div
-                            className="flex gap-6 mt-5"
+                            className="flex gap-6 mt-5 justify-center sm:justify-start"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 1, duration: 0.8 }}
