@@ -5,6 +5,7 @@ import IntroAnimation from "@/components/IntroAnimation";
 import Navbar from "@/components/Navbar";
 import About from "@/sections/About";
 import Hero from "@/sections/Hero";
+import Skills from "@/sections/Skills";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           <Navbar />
           <Hero />
           <About />
+          <Skills />
         </div>
         
       )}
