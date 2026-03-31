@@ -27,6 +27,7 @@ import {
     SiRender,
     SiTypescript,
     SiExpress,
+    SiHostinger,
 } from "react-icons/si";
 import PolarshIcon from "../../public/assets/icons/PolarshIcon";
 import { IoCaretUpCircleOutline } from "react-icons/io5";
@@ -72,9 +73,10 @@ const Skills = () => {
         // { icon: <IoCaretUpCircleOutline />, name: "Ai-Sdk" },
         { icon: <SiGit />, name: "Git" },
         { icon: <SiGithub />, name: "GitHub" },
-        { icon: <SiUbuntu />, name: "Ubuntu" },
         { icon: <SiVercel />, name: "Vercel" },
         { icon: <SiRender />, name: "Render" },
+        { icon: <SiHostinger />, name: "Hostinger" },
+        { icon: <SiUbuntu />, name: "Ubuntu" },
     ]
 
     const row1 = skills.slice(0, skills.length / 2);
