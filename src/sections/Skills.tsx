@@ -8,7 +8,6 @@ import {
 import {
     SiPassport,
     SiMongodb,
-    SiTrpc,
     SiC,
     SiCplusplus,
     SiPython,
@@ -28,17 +27,16 @@ import {
     SiRender,
     SiTypescript,
     SiExpress,
-    SiClerk,
 } from "react-icons/si";
-import { IoCaretUpCircleOutline } from "react-icons/io5";
 import PolarshIcon from "../../public/assets/icons/PolarshIcon";
+import { IoCaretUpCircleOutline } from "react-icons/io5";
 import { motion, useMotionValue } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 
 const SkillItem = ({ skill }: { skill: any }) => (
-    <div className="flex flex-col items-center gap-2 min-w-30">
-        <span className="hover:scale-120 transition-transform duration-300 flex items-center justify-center h-18">
+    <div className="flex flex-col items-center gap-5 sm:gap-2 min-w-30">
+        <span className="hover:scale-120 transition-transform duration-300 flex items-center justify-center sm:h-18">
             {skill.icon}
         </span>
         <p className="text-sm">{skill.name}</p>
@@ -63,7 +61,7 @@ const Skills = () => {
         { icon: <SiPassport />, name: "Passport.js" },
         { icon: <RiNextjsLine />, name: "Next.js" },
         { icon: <SiTypescript />, name: "TypeScript" },
-        { icon: <PolarshIcon className="size-15" />, name: "Polar" },
+        { icon: <PolarshIcon className="size-8 sm:size-10 md:size-15" />, name: "Polar" },
         // { icon: <SiClerk />, name: "Clerk" },
         { icon: <SiShadcnui />, name: "Shadcn/UI" },
         { icon: <SiMongodb />, name: "MongoDB" },
@@ -81,11 +79,9 @@ const Skills = () => {
 
     const row1 = skills.slice(0, skills.length / 2);
     const row2 = skills.slice(skills.length / 2);
-    // const row3 = skills.slice(20, 30);
 
     const repeatedRow1 = [...row1, ...row1];
     const repeatedRow2 = [...row2, ...row2];
-    // const repeatedRow3 = [...row3, ...row3];
 
 
 
@@ -239,13 +235,13 @@ const Skills = () => {
             <div className="relative w-full overflow-hidden">
                 <div className="flex flex-col gap-10 text-[#1cd8d2] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
 
-                    <motion.div ref={trackRef1} style={{ x: x1 }} className="flex gap-10 ">
+                    <motion.div ref={trackRef1} style={{ x: x1 }} className="flex md:gap-10 ">
                         {repeatedRow1.map((skill, i) => (
                             <SkillItem key={i} skill={skill} />
                         ))}
                     </motion.div>
 
-                    <motion.div ref={trackRef2} style={{ x: x2 }} className="flex gap-10">
+                    <motion.div ref={trackRef2} style={{ x: x2 }} className="flex md:gap-10">
                         {repeatedRow2.map((skill, i) => (
                             <SkillItem key={i} skill={skill} />
                         ))}
