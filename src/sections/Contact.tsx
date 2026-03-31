@@ -29,6 +29,10 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
+if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    throw new Error("Missing EmailJS credentials");
+}
+
 interface FormErrors {
     name?: string;
     email?: string;
@@ -75,10 +79,12 @@ const Contact = () => {
     }
 
     const validateForm = (): boolean => {
-        const requiredFields: (keyof FormData)[] = ['name', 'email', 'service', 'budget', 'idea'];
+        const requiredFields: (keyof FormData)[] = ['name', 'email', 'service', 'idea'];
         const newErrors: FormErrors = {};
+
+
         requiredFields.forEach(field => !formData[field].trim() && (newErrors[field] = 'This field is required'));
-        if (formData.service !== "other" && !formData.budget.trim()){
+        if (formData.service !== "other" && formData.service !== "message" && !formData.budget.trim()){
             newErrors.budget = 'Budget is required for selected service';
         }
 
@@ -102,15 +108,15 @@ const Contact = () => {
             const finalService = formData.service === "other" ? formData.customService : formData.service;
 
             await emailjs.send(
-                SERVICE_ID!,
-                TEMPLATE_ID!,
+                SERVICE_ID,
+                TEMPLATE_ID,
                 {
                     ...formData,
                     from_name: formData.name,
                     reply_to: formData.email,
                     service: finalService,
                 },
-                PUBLIC_KEY!);
+                PUBLIC_KEY);
 
             setStatus("Success");
 
