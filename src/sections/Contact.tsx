@@ -15,16 +15,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { 
+    Select, 
+    SelectContent, 
+    SelectItem, 
+    SelectTrigger, 
+    SelectValue 
+} from "@/components/ui/select";
+
 const MotionImage = motion.create(Image);
+
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-
-console.log("Service ID:", SERVICE_ID);
-console.log("Template ID:", TEMPLATE_ID);
-console.log("Public Key:", PUBLIC_KEY);
-
 
 interface FormErrors {
     name?: string;
@@ -215,7 +218,8 @@ const Contact = () => {
 
                                         <SelectItem value="web-development">Website</SelectItem>
                                         <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                                        <SelectItem value="other">Other</SelectItem>
+                                        <SelectItem value="other">Other Services</SelectItem>
+                                        <SelectItem value="message">Leave a Message</SelectItem>
 
                                     </SelectContent>
                                 </Select>
@@ -239,7 +243,7 @@ const Contact = () => {
                             </Field>
                         )}
 
-                        {formData.service && formData.service !== "other" && (
+                        {formData.service && formData.service !== "other" && formData.service !== "message" && (
                         <Field>
                             <FieldLabel>Budget<span className="text-red-500">*</span></FieldLabel>
                             <FieldContent>
@@ -261,7 +265,7 @@ const Contact = () => {
                         )}
 
                         <Field>
-                            <FieldLabel>Idea<span className="text-red-500">*</span></FieldLabel>
+                            <FieldLabel>{formData.service === "message" ? "Message" : "Idea"}<span className="text-red-500">*</span></FieldLabel>
                             <FieldContent>
                                 <Textarea
                                     placeholder="Enter Your Idea"
