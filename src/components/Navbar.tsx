@@ -115,12 +115,12 @@ const Navbar = () => {
 
 
                 <div className="hidden sm:block">
-                    <Link
-                        href={"contact"}
+                    <a
+                        href="#contact"
                         className="bg-linear-to-r from-pink-500 to-blue-500 px-5 py-2 rounded-full font-medium shadow-lg text-white hover:opacity-90 transition-opacity duration-300 text-sm"
                     >
                         Reach Out
-                    </Link>
+                    </a>
                 </div>
             </nav>
 
