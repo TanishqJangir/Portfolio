@@ -142,42 +142,42 @@ const Projects = () => {
                                     loading="lazy"
                                 />
                             ) : (
-                            <div
-                                className="relative flex items-center justify-center overflow-hidden bg-transparent rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
-                                style={{
-                                    width: "80%",
-                                    maxWidth: "960px",
-                                    height: "480px",
-                                    zIndex: 10,
-                                    transition: "box-shadow 250ms ease",
-                                }}
-                            >
-                                <img
-                                    src={project.image.src}
-                                    alt={project.title}
-                                    className="w-full h-full object-fill object-center drop-shadow-2xl"
-                                    style={{
-                                        position: "relative",
-                                        zIndex: 10,
-                                        transition: "transform 200ms ease",
-                                    }}
-                                    loading="lazy"
-                                />
-
                                 <div
-                                    className="absolute inset-0 pointer-events-none"
+                                    className="relative flex items-center justify-center overflow-hidden bg-transparent rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.7)]"
                                     style={{
-                                        zIndex: 11,
-                                        background: "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 40%)"
+                                        width: "80%",
+                                        maxWidth: "960px",
+                                        height: "480px",
+                                        zIndex: 10,
+                                        transition: "box-shadow 250ms ease",
                                     }}
-                                />
-                            </div>
+                                >
+                                    <img
+                                        src={project.image.src}
+                                        alt={project.title}
+                                        className="w-full h-full object-fill object-center drop-shadow-2xl"
+                                        style={{
+                                            position: "relative",
+                                            zIndex: 10,
+                                            transition: "transform 200ms ease",
+                                        }}
+                                        loading="lazy"
+                                    />
+
+                                    <div
+                                        className="absolute inset-0 pointer-events-none"
+                                        style={{
+                                            zIndex: 11,
+                                            background: "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 40%)"
+                                        }}
+                                    />
+                                </div>
                             )}
 
                         </div>
                     ))}
                 </div>
-            
+
                 <div className={`flex justify-center items-center gap-4 z-20 pb-4 ${isMobile ? "flex-col" : ""}`}>
                     <Button
                         variant="default"

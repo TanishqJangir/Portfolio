@@ -11,13 +11,13 @@ const About = () => {
 
     return (
         <section id="about" className="min-h-screen w-full bg-black flex items-center justify-center relative text-white">
-            
+
             <div className="absolute inset-0 pointer-events-none">
                 {glows.map((c, index) => (
                     <div key={index} className={`absolute rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] animate-pulse ${c}`} />
                 ))}
             </div>
-            
+
             <h1 className="text-7xl font-bold text-center mt-20">About Me</h1>
         </section>
     )

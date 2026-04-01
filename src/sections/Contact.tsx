@@ -15,12 +15,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { 
-    Select, 
-    SelectContent, 
-    SelectItem, 
-    SelectTrigger, 
-    SelectValue 
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
 } from "@/components/ui/select";
 
 const MotionImage = motion.create(Image);
@@ -46,7 +46,7 @@ interface FormData {
     name: string;
     email: string;
     service: string;
-    customService : string;
+    customService: string;
     budget: string;
     idea: string;
 }
@@ -84,11 +84,11 @@ const Contact = () => {
 
 
         requiredFields.forEach(field => !formData[field].trim() && (newErrors[field] = 'This field is required'));
-        if (formData.service !== "other" && formData.service !== "message" && !formData.budget.trim()){
+        if (formData.service !== "other" && formData.service !== "message" && !formData.budget.trim()) {
             newErrors.budget = 'Budget is required for selected service';
         }
 
-        if(formData.service === "other" && !formData.customService.trim()){
+        if (formData.service === "other" && !formData.customService.trim()) {
             newErrors.customService = "Please specify the service";
         }
 
@@ -250,24 +250,24 @@ const Contact = () => {
                         )}
 
                         {formData.service && formData.service !== "other" && formData.service !== "message" && (
-                        <Field>
-                            <FieldLabel>Budget<span className="text-red-500">*</span></FieldLabel>
-                            <FieldContent>
-                                <div className="relative">
-                                    <Input
-                                        type="text"
-                                        placeholder="Your Budget"
-                                        name="budget"
-                                        value={formData.budget}
-                                        onChange={handleChange}
-                                        className={`${defaultInputStyle} ${errors.budget ? "border-red-500" : "border-gray-500"} pr-10`}
-                                        required
-                                    />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
-                                </div>
-                            </FieldContent>
-                            {errors.budget && <FieldError>{errors.budget}</FieldError>}
-                        </Field>
+                            <Field>
+                                <FieldLabel>Budget<span className="text-red-500">*</span></FieldLabel>
+                                <FieldContent>
+                                    <div className="relative">
+                                        <Input
+                                            type="text"
+                                            placeholder="Your Budget"
+                                            name="budget"
+                                            value={formData.budget}
+                                            onChange={handleChange}
+                                            className={`${defaultInputStyle} ${errors.budget ? "border-red-500" : "border-gray-500"} pr-10`}
+                                            required
+                                        />
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                                    </div>
+                                </FieldContent>
+                                {errors.budget && <FieldError>{errors.budget}</FieldError>}
+                            </Field>
                         )}
 
                         <Field>

@@ -30,9 +30,9 @@ const glowVariants: Variants = {
 
 const Footer = () => {
     return (
-        <footer 
-        id="footer"
-        className="relative overflow-hidden bg-black">
+        <footer
+            id="footer"
+            className="relative overflow-hidden bg-black">
 
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_60%_at_70%_35%,rgba(13,88,202,0.25),transparent_70%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_65%_at_30%_70%,rgba(16,185,129,0.3),transparent_70%)]" />
