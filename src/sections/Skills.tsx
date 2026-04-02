@@ -62,7 +62,7 @@ const Skills = () => {
         { icon: <SiPassport />, name: "Passport.js" },
         { icon: <RiNextjsLine />, name: "Next.js" },
         { icon: <SiTypescript />, name: "TypeScript" },
-        { icon: <PolarshIcon className="size-8 sm:size-10 md:size-15" />, name: "Backchodd Harsh" },
+        { icon: <PolarshIcon className="size-8 sm:size-10 md:size-15" />, name: "Polar" },
         // { icon: <SiClerk />, name: "Clerk" },
         { icon: <SiShadcnui />, name: "Shadcn/UI" },
         { icon: <SiMongodb />, name: "MongoDB" },
