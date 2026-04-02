@@ -54,13 +54,13 @@ const Projects = () => {
             image: isMobile ? NodebaseMobile : NodebaseDesktop,
         },
 
-        {
-            title: "Portfolio",
-            link: "http://localhost:3000",
-            code: "https://github.com/TanishqJangir/Portfolio.git",
-            bgColor: "#0d4d3d",
-            image: isMobile ? PortfolioMobile : PortfolioDesktop,
-        }
+        // {
+        //     title: "Portfolio",
+        //     link: "http://localhost:3000",
+        //     code: "https://github.com/TanishqJangir/Portfolio.git",
+        //     bgColor: "#0d4d3d",
+        //     image: isMobile ? PortfolioMobile : PortfolioDesktop,
+        // }
 
 
     ], [isMobile]
