@@ -141,7 +141,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="h-screen w-full bg-black relative overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10"
+            className="min-h-screen w-full bg-black relative overflow-hidden text-white py-20 px-6 md:px-20 flex flex-col md:flex-row items-center gap-10"
         >
             <ParticlesBackground />
             <div
