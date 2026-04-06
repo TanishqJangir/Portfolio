@@ -8,7 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 
 const IntroAnimation = ({onFinish} : {onFinish: () => void}) => {
 
-    const greetings = useMemo(() => ["Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "Olá", "Здравствуйте", "Merhaba", "Γειά", "Hej", "Hallo", "Salam"],[]);
+    const greetings = useMemo(() => ["Hello", "नमस्ते", "Hola", "Bonjour", "Ciao", "Olá", "Здравствуйте", "Merhaba", "Γειά", "Hej", "Hallo", "こんにちは"],[]);
 
     const [index, setIndex] = useState(0);
     const [visible, setVisible] = useState(true);
