@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import OverlayMenu from "./OverlayMenu";
 import Image from "next/image";
-import Logo from "../../public/assets/images/Logo.png"
+import Logo from "../../public/assets/images/Logo1.png"
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -12,7 +12,6 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Link from "next/link";
 
 
 
@@ -81,15 +80,10 @@ const Navbar = () => {
         <>
             <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 z-50 transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
                 <div className="flex items-center space-x-2">
-                    <Image
-                        src={Logo}
-                        alt="Logo"
-                        className="w-8 h-8"
-                        priority
-                    />
-                    <div
-                        className="text-2xl text-white font-bold hidden sm:block"
-                    >Tanishq</div>
+                    {/* <Image src={Logo} alt="Logo" className="w-8 h-8" /> */}
+                    <div className="text-2xl text-white font-bold hidden sm:block">
+                        Tanishq
+                    </div>
                 </div>
 
                 <div className="block lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
